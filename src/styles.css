@@ -1,0 +1,90 @@
+.app {
+  background: linear-gradient(
+    179.2deg,
+    rgb(21, 21, 212) 0.9%,
+    rgb(53, 220, 243) 95.5%
+  );
+  border: 2px;
+  border-radius: 10px;
+  margin: 100px;
+  font-family: "Lato", sans-serif;
+}
+.searchCity {
+  color: white;
+  padding: 10px 10px;
+  font-size: 30px;
+  margin-left: 15px;
+}
+.search-input {
+  margin-left: 10px;
+}
+
+.current-temp {
+  display: block;
+  border-color: white;
+  border: 5px;
+}
+h1 {
+  color: #fff;
+  margin-left: 20px;
+  margin-top: 20px;
+  font-weight: bold;
+}
+.units {
+  font-size: 20px;
+  margin-left: 50px;
+  color: #fff;
+}
+a {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+h2 {
+  color: #fff;
+  margin-left: 50px;
+  font-size: 70px;
+}
+#time {
+  color: #fff;
+}
+.maxMinT {
+  list-style: none;
+  color: #fff;
+  margin: 10px;
+  font-size: 20px;
+}
+.img-thumbnail {
+  padding: 10px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  background-color: transparent;
+  border-color: transparent;
+  filter: drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.5));
+}
+.card-body {
+  display: block;
+  justify-content: center;
+  align: center;
+}
+
+h3 {
+  text-align: center;
+}
+
+.forecast-week {
+  display: block;
+  padding: 10px;
+  color: #fff;
+  box-align: center;
+}
+.forecast-week ul {
+  list-style: none;
+}
+.img-fluid .rounded-start {
+  box-align: center;
+}
+.rounded-start {
+  filter: drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.5));
+}

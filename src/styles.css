@@ -87,3 +87,8 @@ h3 {
 .rounded-start {
   filter: drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.5));
 }
+#github {
+  text-align: center;
+  padding-left: 50px;
+  font-size: smaller;
+}

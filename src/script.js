@@ -25,9 +25,9 @@ h3.innerHTML = `${currentDay} ${currentHour}:${currentMinutes}`;
 
 function showWeather(response) {
   document.querySelector("#city").innerHTML = response.data.city;
-  document.querySelector("#temperature-element").innerHTML = Math.round(
-    response.data.temperature.current
-  );
+  celiusTemperature = response.data.temperature.current;
+  document.querySelector("#temperature-element").innerHTML =
+    Math.round(celiusTemperature);
   document.querySelector("h4").innerHTML = response.data.condition.description;
   let h4 = "currentWeather";
   let actualIcon = weatherIcon();
@@ -98,7 +98,6 @@ searchCityForm.addEventListener("submit", showCity);
 
 let currentLocationButton = document.querySelector("#current-position");
 currentLocationButton.addEventListener("click", getCurrentLocation);
-searchCity("BARCELONA");
 
 function getPosition(position) {
   let apiKey = "6b72d3t9e0a187fb46324o57dba90ad0";
@@ -116,14 +115,15 @@ function getCurrentLocation(event) {
 //
 function changeFarenheit(event) {
   event.preventDefault();
+  let farenheitTemperature = (celiusTemperature * 9) / 5 + 32;
   let changeDegrees = document.querySelector("#temperature-element");
-  changeDegrees.innerHTML = `23`;
+  changeDegrees.innerHTML = Math.round(farenheitTemperature);
 }
 
 function changeCelsius(event) {
   event.preventDefault();
   let changeDegrees = document.querySelector("#temperature-element");
-  changeDegrees.innerHTML = `19`;
+  changeDegrees.innerHTML = Math.round(celiusTemperature);
 }
 
 let convertFarenheit = document.querySelector("#farenheit-degrees");
@@ -131,3 +131,7 @@ convertFarenheit.addEventListener("click", changeFarenheit);
 
 let convertCelsius = document.querySelector("#celsius-degrees");
 convertCelsius.addEventListener("click", changeCelsius);
+
+let celiusTemperature = null;
+
+searchCity("BARCELONA");

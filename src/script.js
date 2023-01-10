@@ -30,7 +30,7 @@ function showWeather(response) {
     Math.round(celiusTemperature);
   document.querySelector("#wind-speed").innerHTML = response.data.wind.speed;
   document.querySelector("h4").innerHTML = response.data.condition.description;
-  let h4 = "currentWeather";
+  let currentWeather = "h4";
   let actualIcon = weatherIcon();
   let iconElement = document.querySelector("#icono");
   iconElement.setAttribute("src", actualIcon);

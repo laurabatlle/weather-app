@@ -9,93 +9,92 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:wght@300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="src/styles.css" />
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>  
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
   <body>
-    <div class="container">
-      <div class="app">
-        <div class="searchTab">
-          <form id="search-city">
-            <div class="row">
-              <label class="searchCity"> Search city:</label>            
-              <div class="col-sm">
-                <input id="input-city"
-                  type="search"
-                  class="form-control search-input"
-                  autofocus="on"
-                  autocomplete="off"
-                  size="10"
-                  placeholder=" 🔎 Enter city  "
-                />
-              </div>
-              <div class="col-sm">
-                  <input
-                  type="submit"
-                  class="btn btn-primary"
-                  size="10"
-                  value="Search"
-                />
-              </div>    
-              <div class="col-sm" id="current-position">
-                <input
+    <div class="container" id="app">
+      <div class="searchTab">
+        <form id="search-city">
+          <div class="row">
+            <label class="searchCity"> Search city:</label>
+            <div class="col-sm-6">
+              <input
+                id="input-city"
+                type="search"
+                class="form-control search-input"
+                autofocus="on"
+                autocomplete="off"
+                size="10"
+                placeholder=" 🔎 Enter city  "
+              />
+            </div>
+            <div class="col-sm-3">
+              <input
+                type="submit"
+                class="btn btn-primary"
+                size="10"
+                value="Search"
+              />
+            </div>
+            <div class="col-sm-3" id="current-position">
+              <input
                 type="submit"
                 class="btn btn-info"
                 size="10"
                 value="Current Position"
               />
-            </div>  
             </div>
-          </form>
-        </div>
-        <div class="row">
-          <div class="col-7 current-temp">
+          </div>
+        </form>
+      </div>
+      <div class="row">
+        <div class="col-7 current-temp">
+          <div class="row">
+            <div class="col-8 col-sm-6">
+              <h1 id="city">BARCELONA</h1>
+            </div>
             <div class="row">
-              <div class="col-8 col-sm-6">
-                <h1 id="city">
-                  BARCELONA
-                </h1>
+              <div class="col-sm">
+                <h2><span id="temperature-element"> 19 </span> º</h2>
+                <h3 id="time"></h3>
               </div>
-              <div class="row">
-                <div class="col-sm">
-                  <h2> <span id="temperature-element">
-                    19 </span> º</h2>         
-                  <h3 id="time">
-                  </h3>
-                </div>
-                <div class="col-sm">
-                  <span class="units">
-                      <a href="#" id="celsius-degrees"> ºC </a> /
-                      <a href="#" id="farenheit-degrees"> ºF </a>
-                    </span>
-                  <ul class="maxMinT">
-                    <li> Max: <span id="temp-max"> 15 </span> º</li>
-                    <li> Min: <span id="temp-min"> 6</span> º</li>
-                  </ul>
-                </div>
+              <div class="col-sm">
+                <span class="units">
+                  <a href="#" id="celsius-degrees"> ºC </a> /
+                  <a href="#" id="farenheit-degrees"> ºF </a>
+                </span>
+                <ul class="maxMinT">
+                  <li>Max: <span id="temp-max"> 15 </span> º</li>
+                  <li>Min: <span id="temp-min"> 6</span> º</li>
+                </ul>
               </div>
-              <div class="row">
-                <div class="col-sm icono">
-                  <img
-                    src="images/variable weather.png"
-                    class="img-thumbnail"
-                    alt="variableWeather"
-                  />
-                </div>
+            </div>
+            <div class="row">
+              <div class="col-sm icono">
+                <img
+                  src="images/variable weather.png"
+                  class="img-thumbnail"
+                  alt="variableWeather"
+                />
               </div>
             </div>
           </div>
+        </div>
 
         <div class="col-5 forecast-week">
-          <h3> Week forecast </h3>
+          <h3>Week forecast</h3>
           <div
             class="forecast-monday"
             <div
             class="card mb-3 monday"
-            style="max-width: 100%;"
+            style="max-width: 100%"
           >
             <div class="row g-0">
               <div class="col-md-4">
@@ -119,7 +118,7 @@
             class="forecast-tuesday"
             <div
             class="card mb-3 tuesday"
-            style="max-width: 100%;"
+            style="max-width: 100%"
           >
             <div class="row g-0">
               <div class="col-md-4">
@@ -143,7 +142,7 @@
             class="forecast-wednesday"
             <div
             class="card mb-3 wednesday"
-            style="max-width: 100%;"
+            style="max-width: 100%"
           >
             <div class="row g-0">
               <div class="col-md-4">
@@ -165,7 +164,7 @@
             class="forecast-thursday"
             <div
             class="card mb-3 thursday"
-            style="max-width: 100%;"
+            style="max-width: 100%"
           >
             <div class="row g-0">
               <div class="col-md-4">
@@ -189,7 +188,7 @@
             class="forecast-friday"
             <div
             class="card mb-3 friday"
-            style="max-width: 100%;"
+            style="max-width: 100%"
           >
             <div class="row g-0">
               <div class="col-md-4">
@@ -211,8 +210,15 @@
           </div>
         </div>
       </div>
-    <a href="https://github.com/laurabatlle/weather-app/tree/main" id="github"> Github repository  </a>
+      <small>
+        <a
+          href="https://github.com/laurabatlle/weather-app/tree/main"
+          target="_blank"
+          >Open-source code</a
+        >
+        by Laura Batlle
+      </small>
     </div>
   </body>
-  <script src="src/script.js" ></script>
+  <script src="src/script.js"></script>
 </html>

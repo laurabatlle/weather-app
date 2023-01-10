@@ -29,44 +29,44 @@ function showWeather(response) {
     response.data.temperature.current
   );
   document.querySelector("h4").innerHTML = response.data.condition.description;
-  let description = "h4";
+  let h4 = "currentWeather";
   let actualIcon = weatherIcon();
   let iconElement = document.querySelector("#icono");
   iconElement.setAttribute("src", actualIcon);
   iconElement.setAttribute("alt", response.data.condition.icon);
 }
 
-function weatherIcon() {
-  if (description === "clear sky") {
+function weatherIcon(response) {
+  if (currentWeather === "clear sky") {
     return `images/clear-sky-day.png`;
   }
 
-  if (description === "few clouds") {
+  if (currentWeather === "few clouds") {
     return `images/few-clouds-day.png`;
   }
 
-  if (description === "scattered clouds") {
+  if (currentWeather === "scattered clouds") {
     return `images/skattered-clouds-day.png`;
   }
 
-  if (description === "broken clouds") {
+  if (currentWeather === "broken clouds") {
     return `images/broken-clouds-day.png`;
   }
 
-  if (description === "shower rain") {
+  if (currentWeather === "shower rain") {
     return `images/rain-day.png`;
   }
 
-  if (description === "rain") {
+  if (currentWeather === "rain") {
     return `images/rain-day.png`;
   }
-  if (description === "thunderstorm") {
+  if (currentWeather === "thunderstorm") {
     return `images/thunderstorm-day.png`;
   }
-  if (description === "snow") {
+  if (currentWeather === "snow") {
     return `images/snow-day.png`;
   }
-  if (description === "mist") {
+  if (currentWeather === "mist") {
     return `images/mist-day.png`;
   }
 }

@@ -116,12 +116,16 @@ function getCurrentLocation(event) {
 function changeFarenheit(event) {
   event.preventDefault();
   let farenheitTemperature = (celiusTemperature * 9) / 5 + 32;
+  convertCelsius.classList.remove("active");
+  convertFarenheit.classList.add("active");
   let changeDegrees = document.querySelector("#temperature-element");
   changeDegrees.innerHTML = Math.round(farenheitTemperature);
 }
 
 function changeCelsius(event) {
   event.preventDefault();
+  convertCelsius.classList.add("active");
+  convertFarenheit.classList.remove("active");
   let changeDegrees = document.querySelector("#temperature-element");
   changeDegrees.innerHTML = Math.round(celiusTemperature);
 }

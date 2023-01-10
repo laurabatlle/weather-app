@@ -110,5 +110,20 @@ small {
 
 a {
   text-decoration: none;
+}
+
+.active {
+  color: #fff;
+  font-weight: bolder;
+  cursor: default;
+  text-decoration: none;
+}
+
+.active :hover {
+  text-decoration: none;
+}
+
+.codedBy {
+  text-decoration: none;
   color: #fff;
 }

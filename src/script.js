@@ -28,6 +28,7 @@ function showWeather(response) {
   celiusTemperature = response.data.temperature.current;
   document.querySelector("#temperature-element").innerHTML =
     Math.round(celiusTemperature);
+  document.querySelector("#wind-speed").innerHTML = response.data.wind.speed;
   document.querySelector("h4").innerHTML = response.data.condition.description;
   let h4 = "currentWeather";
   let actualIcon = weatherIcon();

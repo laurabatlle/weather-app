@@ -28,6 +28,7 @@ function showWeather(response) {
   document.querySelector("#temperature-element").innerHTML = Math.round(
     response.data.temperature.current
   );
+  document.querySelector("h4").innerHTML = response.data.condition.description;
 }
 
 function foreCasttoday(response) {

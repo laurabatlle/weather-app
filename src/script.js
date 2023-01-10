@@ -29,17 +29,17 @@ function showWeather(response) {
     response.data.temperature.current
   );
   document.querySelector("#temp-max").innerHTML = Math.round(
-    response.data.main.temp_max
+    response.data.temperature.maximum
   );
   document.querySelector("#temp-min").innerHTML = Math.round(
-    response.data.main.temp_min
+    response.data.temperature.minimum
   );
 }
 
 function searchCity(city) {
   let apiKey = "6b72d3t9e0a187fb46324o57dba90ad0";
   let apiUrl =
-    "https://api.shecodes.io/weather/v1/current?query={city}&key={key}&units=metric";
+    "https://api.shecodes.io/weather/v1/current?query={city}&key={apiKey}&units=metric";
   axios.get(apiUrl).then(showWeather);
 }
 

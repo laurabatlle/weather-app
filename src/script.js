@@ -6,7 +6,7 @@ let days = [
   "Wednesday",
   "Thursday",
   "Friday",
-  "Saturday"
+  "Saturday",
 ];
 let currentDay = days[currentTime.getDay()];
 let currentHour = currentTime.getHours();
@@ -20,12 +20,13 @@ if (currentMinutes < 10) {
 
 let h3 = document.querySelector("#time");
 h3.innerHTML = `${currentDay} ${currentHour}:${currentMinutes}`;
+
 //
 
 function showWeather(response) {
-  document.querySelector("#city").innerHTML = response.data.name;
+  document.querySelector("#city").innerHTML = response.data.city;
   document.querySelector("#temperature-element").innerHTML = Math.round(
-    response.data.main.temp
+    response.data.temperature.current
   );
   document.querySelector("#temp-max").innerHTML = Math.round(
     response.data.main.temp_max
@@ -36,8 +37,9 @@ function showWeather(response) {
 }
 
 function searchCity(city) {
-  let apiKey = "6d68aadfacdd4f5163bc273049a0cf2d";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+  let apiKey = "6b72d3t9e0a187fb46324o57dba90ad0";
+  let apiUrl =
+    "https://api.shecodes.io/weather/v1/current?query={city}&key={key}&units=metric";
   axios.get(apiUrl).then(showWeather);
 }
 
@@ -57,10 +59,10 @@ currentLocationButton.addEventListener("click", getCurrentLocation);
 searchCity("BARCELONA");
 
 function getPosition(position) {
-  let apiKey = "6d68aadfacdd4f5163bc273049a0cf2d";
-  let lat = position.coords.latitude;
-  let lon = position.coords.longitude;
-  let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+  let apiKey = "6b72d3t9e0a187fb46324o57dba90ad0";
+  let lat = position.coordinates.latitude;
+  let lon = position.coordinates.longitude;
+  let url = `https://api.shecodes.io/weather/v1/current?lon={lon}&lat={lat}&key={apiKey}&units=metric`;
   axios.get(url).then(showWeather);
 }
 

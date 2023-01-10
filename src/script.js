@@ -28,19 +28,27 @@ function showWeather(response) {
   document.querySelector("#temperature-element").innerHTML = Math.round(
     response.data.temperature.current
   );
-  document.querySelector("#temp-max").innerHTML = Math.round(
-    response.data.temperature.maximum
-  );
-  document.querySelector("#temp-min").innerHTML = Math.round(
-    response.data.temperature.minimum
-  );
 }
+
+function foreCasttoday (response) {
+document.querySelector("#temp-max").innerHTML = Math.round(
+  response.data.daily.temperature.maximum
+);
+document.querySelector("#temp-min").innerHTML = Math.round(
+  response.data.daily.temperature.minimum
+);
+
 
 function searchCity(city) {
   let apiKey = "6b72d3t9e0a187fb46324o57dba90ad0";
-  let apiUrl =
-    "https://api.shecodes.io/weather/v1/current?query={city}&key={apiKey}&units=metric";
+  let apiUrl = "https://api.shecodes.io/weather/v1/current?query={city}&key={apiKey}&units=metric";
   axios.get(apiUrl).then(showWeather);
+}
+
+function searchCityForecast(city) {
+  let apiKey = "6b72d3t9e0a187fb46324o57dba90ad0";
+  let apiUrl = "https://api.shecodes.io/weather/v1/forecast?query={query}&key={key}&units=metric";
+  axios.get(apiUrl).then(foreCasttoday);
 }
 
 function showCity(event) {

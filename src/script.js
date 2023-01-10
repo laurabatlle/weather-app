@@ -29,6 +29,46 @@ function showWeather(response) {
     response.data.temperature.current
   );
   document.querySelector("h4").innerHTML = response.data.condition.description;
+  let description = "h4";
+  let actualIcon = weatherIcon();
+  let iconElement = document.querySelector("#icono");
+  iconElement.setAttribute("src", actualIcon);
+  iconElement.setAttribute("alt", response.data.condition.icon);
+}
+
+function weatherIcon() {
+  if (description === "clear sky") {
+    return `images/clear-sky-day.png`;
+  }
+
+  if (description === "few clouds") {
+    return `images/few-clouds-day.png`;
+  }
+
+  if (description === "scattered clouds") {
+    return `images/skattered-clouds-day.png`;
+  }
+
+  if (description === "broken clouds") {
+    return `images/broken-clouds-day.png`;
+  }
+
+  if (description === "shower rain") {
+    return `images/rain-day.png`;
+  }
+
+  if (description === "rain") {
+    return `images/rain-day.png`;
+  }
+  if (description === "thunderstorm") {
+    return `images/thunderstorm-day.png`;
+  }
+  if (description === "snow") {
+    return `images/snow-day.png`;
+  }
+  if (description === "mist") {
+    return `images/mist-day.png`;
+  }
 }
 
 function foreCasttoday(response) {
@@ -43,6 +83,7 @@ function foreCasttoday(response) {
 function searchCity(city) {
   let apiKey = "6b72d3t9e0a187fb46324o57dba90ad0";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+
   axios.get(apiUrl).then(showWeather);
 }
 

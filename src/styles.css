@@ -58,9 +58,16 @@ h2 {
   border-color: transparent;
   filter: drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.5));
 }
+
+.card {
+  border: none;
+  background: none;
+}
+
 .card-body {
   display: block;
   justify-content: center;
+  background-color: transparent;
 }
 
 h3 {

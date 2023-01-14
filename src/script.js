@@ -74,12 +74,6 @@ function showCity(event) {
   searchCity(city);
 }
 
-let searchCityForm = document.querySelector("#search-city");
-searchCityForm.addEventListener("submit", showCity);
-
-let currentLocationButton = document.querySelector("#current-position");
-currentLocationButton.addEventListener("click", getCurrentLocation);
-
 function foreCasttoday(response) {
   document.querySelector("#temp-max").innerHTML = Math.round(
     response.data.daily.temperature.maximum
@@ -88,6 +82,12 @@ function foreCasttoday(response) {
     response.data.daily.temperature.minimum
   );
 }
+let searchCityForm = document.querySelector("#search-city");
+searchCityForm.addEventListener("submit", showCity);
+
+let currentLocationButton = document.querySelector("#current-position");
+currentLocationButton.addEventListener("click", getCurrentLocation);
+
 function getPosition(position) {
   let apiKey = "6b72d3t9e0a187fb46324o57dba90ad0";
   let lat = position.coords.latitude;

@@ -61,15 +61,6 @@ function weatherIcon(currentWeather) {
   }
 }
 
-function foreCasttoday(response) {
-  document.querySelector("#temp-max").innerHTML = Math.round(
-    response.data.daily.temperature.maximum
-  );
-  document.querySelector("#temp-min").innerHTML = Math.round(
-    response.data.daily.temperature.minimum
-  );
-}
-
 function searchCity(city) {
   let apiKey = "6b72d3t9e0a187fb46324o57dba90ad0";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
@@ -89,6 +80,14 @@ searchCityForm.addEventListener("submit", showCity);
 let currentLocationButton = document.querySelector("#current-position");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
+function foreCasttoday(response) {
+  document.querySelector("#temp-max").innerHTML = Math.round(
+    response.data.daily.temperature.maximum
+  );
+  document.querySelector("#temp-min").innerHTML = Math.round(
+    response.data.daily.temperature.minimum
+  );
+}
 function getPosition(position) {
   let apiKey = "6b72d3t9e0a187fb46324o57dba90ad0";
   let lat = position.coords.latitude;

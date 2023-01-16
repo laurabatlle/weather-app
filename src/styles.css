@@ -89,6 +89,7 @@ h3 {
   padding: 10px;
   color: #fff;
   box-align: center;
+  max-width: 100%;
 }
 .forecast-week ul {
   list-style: none;

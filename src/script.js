@@ -41,7 +41,7 @@ function displayForecast() {
               <div class="col-md-8">
                 <div class="card-body">
                   <h5 class="card-title">${day}</h5>
-                  <ul class="temp-monday">
+                  <ul class="temp-forecast">
                     <li>Max: 12º / Min: 8º</li>
                   </ul>
                 </div>

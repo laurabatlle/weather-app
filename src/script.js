@@ -23,6 +23,36 @@ h3.innerHTML = `${currentDay} ${currentHour}:${currentMinutes}`;
 
 //
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+  let forecastHTML = ``;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="row g-0">
+              <div class="col-md-4">
+                <img
+                  src="images/clear-sky-day.png"
+                  class="img-fluid rounded-start"
+                  alt="clouds"
+                />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">${day}</h5>
+                  <ul class="temp-monday">
+                    <li>Max: 12º / Min: 8º</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+  `;
+  });
+  forecastHTML = forecastHTML;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function showWeather(response) {
   document.querySelector("#city").innerHTML = response.data.city;
   celiusTemperature = response.data.temperature.current;
@@ -128,3 +158,4 @@ convertCelsius.addEventListener("click", changeCelsius);
 let celiusTemperature = null;
 
 searchCity("BARCELONA");
+displayForecast();

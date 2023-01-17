@@ -25,7 +25,7 @@ h3.innerHTML = `${currentDay} ${currentHour}:${currentMinutes}`;
 
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
-  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+  let days = ["Thursday", "Friday", "Saturday", "Sunday", "Monday"];
   let forecastHTML = ``;
   days.forEach(function (day) {
     forecastHTML =

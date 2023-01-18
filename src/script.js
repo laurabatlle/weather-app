@@ -52,6 +52,13 @@ function displayForecast(response) {
   });
   forecastHTML = forecastHTML;
   forecastElement.innerHTML = forecastHTML;
+
+  document.querySelector("#temp-max").innerHTML = Math.round(
+    response.data.daily.temperature.maximum
+  );
+  document.querySelector("#temp-min").innerHTML = Math.round(
+    response.data.daily.temperature.minimum
+  );
 }
 function getForecast(coordinates) {
   console.log(coordinates);
@@ -112,14 +119,6 @@ function showCity(event) {
   searchCity(city);
 }
 
-function foreCasttoday(response) {
-  document.querySelector("#temp-max").innerHTML = Math.round(
-    response.data.daily.temperature.maximum
-  );
-  document.querySelector("#temp-min").innerHTML = Math.round(
-    response.data.daily.temperature.minimum
-  );
-}
 let searchCityForm = document.querySelector("#search-city");
 searchCityForm.addEventListener("submit", showCity);
 

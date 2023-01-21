@@ -96,7 +96,7 @@ function showWeather(response) {
   document.querySelector("h4").innerHTML = response.data.condition.description;
   let currentWeather = "h4";
   let actualIcon = weatherIcon(response.data.condition.description);
-  let iconElement = document.querySelector("#icono");
+  let iconElement = document.querySelector("#icono-big");
   iconElement.setAttribute("src", actualIcon);
   iconElement.setAttribute("alt", response.data.condition.icon);
   getForecast(response.data.coordinates);

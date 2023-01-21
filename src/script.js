@@ -34,7 +34,6 @@ function formatDay(date) {
     "Friday",
     "Saturday",
   ];
-
   return days[day];
 }
 

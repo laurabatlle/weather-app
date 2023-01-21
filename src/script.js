@@ -23,32 +23,53 @@ h3.innerHTML = `${currentDay} ${currentHour}:${currentMinutes}`;
 
 //
 
+function formatDay(date) {
+  let day = date.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  return days[day];
+}
+
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let days = ["Thursday", "Friday", "Saturday", "Sunday", "Monday"];
   let forecastHTML = ``;
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="row g-0">
+  days.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="row g-0">
               <div class="col-md-4">
                 <img
-                  src="images/clear-sky-day.png"
+                  src= ${actualIcon}
                   class="img-fluid rounded-start"
-                  alt="clouds"
+                  alt= ${response.data.condition.icon}
                 />
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h5 class="card-title">${day}</h5>
+                  <h5 class="card-title">${formatDay(forecastDay.dt)}</h5>
                   <ul class="temp-forecast">
-                    <li>Max: 12º / Min: 8º</li>
+                    <li>Max: <span class="weather-forecast-temperature-max"> ${Math.round(
+                      forecastDay.temperature.maximum
+                    )}° </span> / Min: <span class="weather-forecast-temperature-min"> ${Math.round(
+          forecastDay.temperature.minimum
+        )}° </span></li>
                   </ul>
                 </div>
               </div>
             </div>
   `;
+    }
   });
   forecastHTML = forecastHTML;
   forecastElement.innerHTML = forecastHTML;

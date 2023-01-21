@@ -24,7 +24,7 @@ h3.innerHTML = `${currentDay} ${currentHour}:${currentMinutes}`;
 //
 
 function formatDay(timestamp) {
-  let date = new Date(timestamp);
+  let date = new Date(timestamp * 1000);
   let day = date.getDay();
   let days = [
     "Sunday",
@@ -43,7 +43,7 @@ function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = ``;
   forecast.forEach(function (forecastDay, index) {
-    if (index < 5) {
+    if (index < 6) {
       forecastHTML =
         forecastHTML +
         `<div class="row g-0">
@@ -76,7 +76,7 @@ function displayForecast(response) {
 function getForecast(coordinates) {
   console.log(coordinates);
   let apiKey = "6b72d3t9e0a187fb46324o57dba90ad0";
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.latitude}&lat=${coordinates.longitude}&key=${apiKey}&units=metric`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.latitude}&lat=${coordinates.longitude}&key=${apiKey}`;
   axios.get(apiUrl).then(displayForecast);
 }
 
@@ -86,6 +86,8 @@ function showWeather(response) {
   document.querySelector("#temperature-element").innerHTML =
     Math.round(celiusTemperature);
   document.querySelector("#wind-speed").innerHTML = response.data.wind.speed;
+  document.querySelector("#humidity").innerHTML =
+    response.data.temperature.humidity;
   document.querySelector("h4").innerHTML = response.data.condition.description;
   let currentWeather = "h4";
   let actualIcon = weatherIcon(response.data.condition.description);

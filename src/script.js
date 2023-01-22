@@ -76,7 +76,7 @@ function displayForecast(response) {
 function getForecast(coordinates) {
   console.log(coordinates);
   let apiKey = "6b72d3t9e0a187fb46324o57dba90ad0";
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.latitude}&lat=${coordinates.longitude}&key=${apiKey}`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=${coordinates.latitude}&lon=${coordinates.longitude}&key=${apiKey}`;
   axios.get(apiUrl).then(displayForecast);
 }
 
@@ -115,6 +115,8 @@ function weatherIcon(currentWeather) {
   } else if (currentWeather === "snow") {
     return `images/snow-day.png`;
   } else if (currentWeather === "mist") {
+    return `images/mist-day.png`;
+  } else if (currentWeather === "haze") {
     return `images/mist-day.png`;
   } else if (currentWeather === "overcast clouds") {
     return `images/broken-clouds-day.png`;
